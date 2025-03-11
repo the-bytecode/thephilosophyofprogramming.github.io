@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix: Applying Philosophy to a Movie Ticketing System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .content p, .content ul, .content ol {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        .chapter-nav a {
+            transition: all 0.3s ease;
+        }
+        .chapter-nav a:hover {
+            transform: translateY(-2px);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        @keyframes floatAnim {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: floatAnim 5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pulse {
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-flow {
+            background: linear-gradient(-45deg, #4F46E5, #7C3AED, #2563EB, #8B5CF6);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .icon-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        @keyframes type {
+            from { width: 0; }
+        }
+        .typing {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid #8B5CF6;
+            width: 0;
+            animation: type 3.5s steps(40, end) forwards;
+        }
+        .typing-delay-1 {
+            animation-delay: 0.5s;
+        }
+        .typing-delay-2 {
+            animation-delay: 1s;
+        }
+        .typing-delay-3 {
+            animation-delay: 1.5s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-indigo-600 transition duration-300">
+                    <i class="fas fa-book-open mr-2"></i>Philosophy of Programming
+                </a>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
+                        <i class="fas fa-home"></i> <span class="hidden md:inline ml-1">Home</span>
+                    </a>
+                    <a href="chapter14.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
+                        <i class="fas fa-arrow-left"></i> <span class="hidden md:inline ml-1">Previous Chapter</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-indigo-600 font-semibold mb-2">Appendix</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Applying Philosophy to a Movie Ticketing System</h1>
+            <div class="flex justify-center items-center space-x-3">
+                <div class="w-3 h-3 bg-indigo-600 rounded-full pulse"></div>
+                <p class="text-xl text-gray-600">Coming Soon</p>
+                <div class="w-3 h-3 bg-indigo-600 rounded-full pulse"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Chapter Navigation -->
+    <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between py-4 chapter-nav">
+                <span class="text-gray-400">
+                    <i class="fas fa-book mr-2"></i>Appendix
+                </span>
+                <div class="flex space-x-4">
+                    <a href="chapter14.html" class="text-gray-600 hover:text-indigo-600 flex items-center">
+                        <i class="fas fa-arrow-left mr-1"></i> Previous: Testing with Philosophical Focus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coming Soon Content -->
+    <main class="gradient-flow py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 content">
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-6 typing">Our philosophers are hard at work...</h2>
+                    <p class="text-xl text-gray-600 typing typing-delay-1">The complete appendix is currently under philosophical contemplation.</p>
+                    <p class="text-lg text-gray-500 typing typing-delay-2">We're distilling profound concepts into practical, elegant code.</p>
+                    <div class="mt-10">
+                        <div class="inline-block relative">
+                            <div class="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center floating">
+                                <i class="fas fa-code text-4xl text-indigo-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-8 gradient-text">What to Expect in the Appendix</h3>
+                    <div class="icon-grid">
+                        <div class="icon-card">
+                            <div class="text-indigo-600 text-3xl mb-4">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">Domain Model</h4>
+                            <p class="text-center text-gray-600">With Class Impersonation</p>
+                        </div>
+                        <div class="icon-card">
+                            <div class="text-indigo-600 text-3xl mb-4">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">System Architecture</h4>
+                            <p class="text-center text-gray-600">Philosophical Design</p>
+                        </div>
+                        <div class="icon-card">
+                            <div class="text-indigo-600 text-3xl mb-4">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">Implementation</h4>
+                            <p class="text-center text-gray-600">Practical Guidelines</p>
+                        </div>
+                        <div class="icon-card">
+                            <div class="text-indigo-600 text-3xl mb-4">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">Testing Strategy</h4>
+                            <p class="text-center text-gray-600">Philosophical Approach</p>
+                        </div>
+                        <div class="icon-card">
+                            <div class="text-indigo-600 text-3xl mb-4">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">Movie Entities</h4>
+                            <p class="text-center text-gray-600">Living Digital Objects</p>
+                        </div>
+                        <div class="icon-card">
+                            <div class="text-indigo-600 text-3xl mb-4">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2">Booking Flow</h4>
+                            <p class="text-center text-gray-600">Natural Narrative</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 p-8 rounded-xl mb-12">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">A Glimpse of What's Coming</h3>
+                    <div class="prose prose-indigo prose-lg max-w-none">
+                        <p class="text-gray-600 italic">
+                            "The Movie Ticketing System will serve as a complete demonstration of all the philosophical principles discussed throughout the book. It will show how these principles work together to create a system that is not just technically sound but conceptually coherent and aligned with reality."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-lg text-gray-600 typing typing-delay-3">Subscribe to our newsletter to be notified when the Appendix is ready.</p>
+                    <div class="mt-8">
+                        <div class="flex max-w-md mx-auto">
+                            <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-l-lg border-2 border-indigo-300 focus:outline-none focus:border-indigo-500">
+                            <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-r-lg transition duration-300">Notify Me</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Related Content -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Explore Completed Chapters</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="chapter12.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 12:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SOLID Principles with Philosophical Depth</h3>
+                    <p class="text-gray-600">Go beyond mechanical application of SOLID principles to understand their deeper philosophical foundations.</p>
+                </a>
+                
+                <a href="chapter13.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 13:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Deep JDK Understanding</h3>
+                    <p class="text-gray-600">Study the JDK as a philosophical text that embodies design principles, trade-offs, and conceptual models.</p>
+                </a>
+                
+                <a href="chapter14.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 14:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Testing with Philosophical Focus</h3>
+                    <p class="text-gray-600">Transform testing from a verification activity to a philosophical inquiry that explores the nature of your system.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">The Philosophy of Programming</h3>
+                    <p class="text-gray-300 mb-4">
+                        A profound approach to software development that treats programming as a philosophical discipline.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Appendix Topics</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300 flex items-center"><i class="fas fa-hourglass-half text-indigo-400 mr-2"></i> A.1: Domain Model with Class Impersonation</li>
+                        <li class="text-gray-300 flex items-center"><i class="fas fa-hourglass-half text-indigo-400 mr-2"></i> A.2: Philosophical System Architecture</li>
+                        <li class="text-gray-300 flex items-center"><i class="fas fa-hourglass-half text-indigo-400 mr-2"></i> A.3: Implementation Guidelines</li>
+                        <li class="text-gray-300 flex items-center"><i class="fas fa-hourglass-half text-indigo-400 mr-2"></i> A.4: Philosophical Testing Strategy</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navigate</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Table of Contents</a></li>
+                        <li><a href="chapter14.html" class="text-gray-300 hover:text-white transition">Previous Chapter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 The Philosophy of Programming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
