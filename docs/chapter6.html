@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Semantic Type Selection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .content p, .content ul, .content ol {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        .content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content ul, .content ol {
+            margin-left: 1.5rem;
+        }
+        .content ul {
+            list-style-type: disc;
+        }
+        .content ol {
+            list-style-type: decimal;
+        }
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #8B5CF6;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        .chapter-nav a {
+            transition: all 0.3s ease;
+        }
+        .chapter-nav a:hover {
+            transform: translateY(-2px);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        pre {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            background-color: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            font-size: 0.85rem;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-indigo-600 transition duration-300">
+                    <i class="fas fa-book-open mr-2"></i>Philosophy of Programming
+                </a>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
+                        <i class="fas fa-home"></i> <span class="hidden md:inline ml-1">Home</span>
+                    </a>
+                    <a href="chapter7.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
+                        <i class="fas fa-arrow-right"></i> <span class="hidden md:inline ml-1">Next Chapter</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chapter Header -->
+    <header class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-indigo-600 font-semibold mb-2">Chapter 6</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Semantic Type Selection</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Choose types based on their semantic meaning rather than technical convenience to create more expressive and self-documenting code.
+            </p>
+        </div>
+    </header>
+
+    <!-- Chapter Navigation -->
+    <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between py-4 chapter-nav">
+                <span class="text-gray-400">
+                    <i class="fas fa-book mr-2"></i>Part II: Core Philosophical Principles
+                </span>
+                <div class="flex space-x-4">
+                    <a href="chapter5.html" class="text-gray-600 hover:text-indigo-600 flex items-center">
+                        <i class="fas fa-arrow-left mr-1"></i> Previous: True Encapsulation and Authority
+                    </a>
+                    <a href="chapter7.html" class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                        Next: Immutable Core Identity <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chapter Content -->
+    <main class="bg-white py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 content">
+            <h2 class="text-2xl font-bold" id="types-as-semantic">6.1 Types as Semantic Constructs</h2>
+            <p>
+                In traditional programming, type selection is often driven by technical considerations: storage efficiency, performance, or convenience. The philosophical approach recognizes that type selection is fundamentally a semantic decision that should reflect the meaning of the data, not just its technical representation.
+            </p>
+            <pre><code>// Technical type selection
+public class Movie {
+    private String genre; // Just a string
+    private int durationMinutes; // Just a number
+    private String rating; // Just a string
+}
+
+// Semantic type selection
+public class Movie {
+    private MovieGenre genre; // A defined category with meaning
+    private Duration duration; // A time concept, not just a number
+    private Rating rating; // A structured concept with validation rules
+}</code></pre>
+            <p>
+                Semantic type selection constrains values to their conceptual boundaries, preventing nonsensical states and making the code more self-documenting.
+            </p>
+
+            <h2 class="text-2xl font-bold" id="enums-categories">6.2 Enums for Closed Categories</h2>
+            <p>
+                One of the most powerful applications of semantic type selection is using enums for values that come from a closed set of possibilities.
+            </p>
+            <p>
+                Consider how libraries organize books in the real world. Books aren't shelved randomly—they're categorized into specific genres or sections. A librarian wouldn't accept "underwater basket-weaving" as a valid book genre because it doesn't exist in their established classification system. The set of possible book genres is finite and predefined.
+            </p>
+            <p>
+                In programming, when we use strings to represent such categories, we're essentially allowing any arbitrary text as a genre—including nonsensical values like "XYZABC" or "NotARealGenre." This is like allowing books to be placed in non-existent sections of the library, creating chaos and confusion.
+            </p>
+            <p>
+                Enums solve this problem by defining the exact set of valid possibilities:
+            </p>
+            <pre><code>// Poor semantic clarity
+public class Book {
+    private String genre; // Any string is accepted
+    
+    public void setGenre(String genre) {
+        this.genre = genre; // No validation against actual book genres
+    }
+}
+
+// Strong semantic clarity
+public class Book {
+    private BookGenre genre; // Only valid genres accepted
+    
+    public void setGenre(BookGenre genre) {
+        this.genre = Objects.requireNonNull(genre, "Genre must be specified");
+    }
+}
+
+public enum BookGenre {
+    FICTION_ADVENTURE,
+    FICTION_CONTEMPORARY,
+    FICTION_HISTORICAL,
+    FICTION_MYSTERY,
+    FICTION_SCIENCE_FICTION,
+    NON_FICTION_BIOGRAPHY,
+    NON_FICTION_HISTORY,
+    NON_FICTION_SCIENCE,
+    NON_FICTION_SELF_HELP
+}</code></pre>
+            <p>
+                Using enums for closed categories creates a type-safe way to represent domain concepts, preventing invalid values and making code more robust. Just as a physical library has a defined organizational system, our code enforces a defined set of categories that reflect real-world constraints. This not only prevents errors but also makes the code more self-documenting and intuitive to domain experts.
+            </p>
+
+            <h2 class="text-2xl font-bold" id="domain-types">6.3 Domain-Specific Types</h2>
+            <p>
+                Beyond enums, creating custom types for domain concepts is another powerful application of semantic type selection. Consider how we handle money in everyday life. We don't just think of money as a number—we think of it as an amount in a specific currency. Five dollars is fundamentally different from five euros or five bitcoin, despite all being represented by the number 5.
+            </p>
+            <pre><code>// Primitive obsession - using technical types
+public class Product {
+    private String name;
+    private double price; // Just a number - is it dollars? euros? yen?
+    
+    public void applyDiscount(double percentage) {
+        this.price = this.price * (1 - percentage/100); // Prone to errors
+    }
+}
+
+// Domain-specific types
+public class Product {
+    private ProductName name; // Not just any string
+    private Money price; // Amount with currency
+    
+    public void applyDiscount(Percentage percentage) {
+        this.price = this.price.discountBy(percentage);
+    }
+}
+
+public final class Money {
+    private final BigDecimal amount;
+    private final Currency currency;
+    
+    // Constructor with validation
+    public Money(BigDecimal amount, Currency currency) {
+        if (amount.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Amount cannot be negative");
+        }
+        this.amount = amount;
+        this.currency = Objects.requireNonNull(currency);
+    }
+    
+    public Money discountBy(Percentage percentage) {
+        return new Money(
+            amount.multiply(BigDecimal.ONE.subtract(percentage.asFraction())),
+            currency
+        );
+    }
+    
+    // No setters - immutable value object
+}</code></pre>
+            <p>
+                Creating domain-specific types like <code>Money</code> and <code>Percentage</code> makes the code more expressive and prevents common errors. With the <code>Money</code> class, we can't accidentally add dollars to euros or apply a discount of 200%, because the types enforce the conceptual rules of the domain.
+            </p>
+
+            <h2 class="text-2xl font-bold" id="type-hierarchies">6.4 Type Hierarchies as Domain Taxonomies</h2>
+            <p>
+                In nature, organisms are classified into taxonomies that reflect their relationships and shared characteristics. Similarly, type hierarchies in programming should reflect the taxonomical relationships of concepts in the domain.
+            </p>
+            <p>
+                Consider the classification of payment methods in a retail system:
+            </p>
+            <pre><code>// Flat structure - misses the taxonomy
+public class PaymentProcessor {
+    public void processPayment(String paymentType, String accountNumber, double amount) {
+        switch (paymentType) {
+            case "CREDIT_CARD":
+                // Process credit card
+                break;
+            case "DEBIT_CARD":
+                // Process debit card
+                break;
+            case "BANK_TRANSFER":
+                // Process bank transfer
+                break;
+            // And so on...
+        }
+    }
+}
+
+// Taxonomical structure - reflects domain relationships
+public abstract class PaymentMethod {
+    public abstract boolean processPayment(Money amount);
+}
+
+public abstract class CardPayment extends PaymentMethod {
+    protected final CardNumber cardNumber;
+    protected final ExpiryDate expiryDate;
+    protected final SecurityCode securityCode;
+    
+    // Common card processing logic
+}
+
+public class CreditCardPayment extends CardPayment {
+    private final CreditLimit creditLimit;
+    
+    @Override
+    public boolean processPayment(Money amount) {
+        // Credit card specific processing
+    }
+}
+
+public class DebitCardPayment extends CardPayment {
+    private final BankAccount linkedAccount;
+    
+    @Override
+    public boolean processPayment(Money amount) {
+        // Debit card specific processing
+    }
+}
+
+public class BankTransferPayment extends PaymentMethod {
+    private final BankAccount fromAccount;
+    private final BankAccount toAccount;
+    
+    @Override
+    public boolean processPayment(Money amount) {
+        // Bank transfer specific processing
+    }
+}</code></pre>
+            <p>
+                In this taxonomical approach, the type hierarchy reflects the conceptual relationships in the domain. Credit cards and debit cards share characteristics as card payments, while bank transfers represent a different branch of the payment method taxonomy. This approach makes the code more intuitive to domain experts and more maintainable as the domain evolves.
+            </p>
+
+            <h2 class="text-2xl font-bold" id="primitive-obsession">6.5 Avoiding Primitive Obsession</h2>
+            <p>
+                One of the most common anti-patterns in programming is "primitive obsession"—the overuse of primitive types like strings, integers, and booleans instead of creating domain-specific types. This leads to code that is less expressive and more error-prone.
+            </p>
+            <p>
+                Consider user registration in a system:
+            </p>
+            <pre><code>// Primitive obsession - using basic types for domain concepts
+public class UserRegistration {
+    public User registerUser(String email, String password, int age, String country) {
+        // Validation logic scattered throughout the method
+        if (!email.contains("@")) {
+            throw new IllegalArgumentException("Invalid email format");
+        }
+        if (password.length() < 8) {
+            throw new IllegalArgumentException("Password too short");
+        }
+        if (age < 18) {
+            throw new IllegalArgumentException("Must be 18 or older");
+        }
+        // More validation...
+        
+        return new User(email, password, age, country);
+    }
+}
+
+// Domain-specific types
+public class UserRegistration {
+    public User registerUser(EmailAddress email, Password password, Age age, Country country) {
+        // Validation already handled by the types
+        return new User(email, password, age, country);
+    }
+}
+
+public final class EmailAddress {
+    private final String value;
+    
+    public EmailAddress(String value) {
+        if (!isValidEmail(value)) {
+            throw new InvalidEmailException(value);
+        }
+        this.value = value;
+    }
+    
+    private boolean isValidEmail(String email) {
+        // Email validation logic
+        return email != null && email.contains("@");
+    }
+    
+    // No setters - immutable value object
+}</code></pre>
+            <p>
+                By creating domain-specific types for concepts like EmailAddress and Password, we encapsulate the validation and behavior associated with these concepts. This makes the code more expressive, centralizes validation logic, and prevents errors by enforcing domain rules at the type level.
+            </p>
+            <p>
+                In everyday life, we don't think of an email address as just a string of characters—we understand it has a specific format and purpose. Similarly, in our code, creating a dedicated EmailAddress type reflects this richer understanding of the concept.
+            </p>
+
+            <h2 class="text-2xl font-bold" id="types-documentation">6.6 Types as Documentation</h2>
+            <p>
+                Well-chosen types serve as built-in documentation about the domain. They communicate the concepts, constraints, and relationships of the domain to developers without requiring extensive comments or external documentation.
+            </p>
+            <pre><code>// Types as documentation
+public class FlightBookingService {
+    public BoardingPass bookFlight(
+        Passenger passenger, 
+        Flight flight, 
+        SeatClass seatClass, 
+        PaymentMethod paymentMethod
+    ) {
+        // Implementation
+    }
+}</code></pre>
+            <p>
+                Without a single comment, this method signature communicates volumes about the domain. We understand that:
+            </p>
+            <ol>
+                <li>A passenger books a specific flight</li>
+                <li>They select a seat class (e.g., economy, business)</li>
+                <li>They pay using a payment method</li>
+                <li>They receive a boarding pass as a result</li>
+            </ol>
+            <p>
+                The carefully chosen domain-specific types make the code self-documenting and align it with the conceptual model of the domain.
+            </p>
+            <p>
+                In contrast, a method using primitive types would obscure these domain concepts:
+            </p>
+            <pre><code>// Obscured domain concepts
+public class FlightBookingService {
+    public String bookFlight(
+        String passengerDetails, 
+        String flightNumber, 
+        int classCode, 
+        String paymentInfo
+    ) {
+        // Implementation
+    }
+}</code></pre>
+            <p>
+                Here, the domain concepts are buried in technical types, making the code harder to understand and more detached from the domain model.
+            </p>
+            <p>
+                Semantic type selection is about creating a type system that accurately reflects the concepts, constraints, and relationships of the domain. By choosing types that align with the domain model, we create code that is more expressive, more robust, and more closely connected to the real-world domain it represents.
+            </p>
+
+            <div class="mt-12 pt-6 border-t border-gray-200">
+                <blockquote class="italic text-gray-600">
+                    "Types are not just technical containers—they are semantic boundaries that define and enforce the conceptual rules of your domain."
+                </blockquote>
+            </div>
+        </div>
+    </main>
+
+    <!-- Related Chapters -->
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10">Continue Your Journey</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <a href="chapter5.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 5:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">True Encapsulation and Authority</h3>
+                    <p class="text-gray-600">Move beyond getters and setters to implement authority-based access control that mirrors real-world information sharing.</p>
+                </a>
+                
+                <a href="chapter7.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 7:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Immutable Core Identity</h3>
+                    <p class="text-gray-600">Identify and protect the aspects of an entity that define its fundamental identity to create more robust models.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">The Philosophy of Programming</h3>
+                    <p class="text-gray-300 mb-4">
+                        A profound approach to software development that treats programming as a philosophical discipline.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Chapter Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#types-as-semantic" class="text-gray-300 hover:text-white transition">6.1 Types as Semantic Constructs</a></li>
+                        <li><a href="#enums-categories" class="text-gray-300 hover:text-white transition">6.2 Enums for Closed Categories</a></li>
+                        <li><a href="#domain-types" class="text-gray-300 hover:text-white transition">6.3 Domain-Specific Types</a></li>
+                        <li><a href="#type-hierarchies" class="text-gray-300 hover:text-white transition">6.4 Type Hierarchies as Domain Taxonomies</a></li>
+                        <li><a href="#primitive-obsession" class="text-gray-300 hover:text-white transition">6.5 Avoiding Primitive Obsession</a></li>
+                        <li><a href="#types-documentation" class="text-gray-300 hover:text-white transition">6.6 Types as Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navigate</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Table of Contents</a></li>
+                        <li><a href="chapter5.html" class="text-gray-300 hover:text-white transition">Previous Chapter</a></li>
+                        <li><a href="chapter7.html" class="text-gray-300 hover:text-white transition">Next Chapter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 The Philosophy of Programming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
