@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Practical Philosophy: Coding Guidelines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .content p, .content ul, .content ol {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        .content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .content ul, .content ol {
+            margin-left: 1.5rem;
+        }
+        .content ul {
+            list-style-type: disc;
+        }
+        .content ol {
+            list-style-type: decimal;
+        }
+        .content li {
+            margin-bottom: 0.5rem;
+        }
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #8B5CF6;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        .chapter-nav a {
+            transition: all 0.3s ease;
+        }
+        .chapter-nav a:hover {
+            transform: translateY(-2px);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        pre {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            background-color: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            font-size: 0.85rem;
+            color: #1e293b;
+        }
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .guideline-card {
+            background-color: #fff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .guideline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .guideline-number {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(45deg, #3B82F6, #8B5CF6);
+            color: white;
+            border-radius: 9999px;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        .example-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .example-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .example-good {
+            background-color: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        .example-bad {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        .example-heading {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .example-good .example-heading {
+            color: #16a34a;
+        }
+        .example-bad .example-heading {
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-indigo-600 transition duration-300">
+                    <i class="fas fa-book-open mr-2"></i>Philosophy of Programming
+                </a>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
+                        <i class="fas fa-home"></i> <span class="hidden md:inline ml-1">Home</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">The Practical Philosophy:<br>Coding Guidelines</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                A comprehensive collection of philosophical principles applied to everyday coding practices, transforming technical implementation into an expression of digital values.
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <div class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between py-4 chapter-nav">
+                <span class="text-gray-400">
+                    <i class="fas fa-compass mr-2"></i>Practical Principles
+                </span>
+                <div class="flex space-x-4">
+                    <a href="index.html" class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                        <i class="fas fa-arrow-left mr-1"></i> Back to Table of Contents
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content">
+            <div class="mb-16">
+                <p class="text-xl">
+                    This guide bridges the philosophical principles discussed throughout the book with practical coding guidelines that you can apply in your daily work. Each guideline is grounded in the philosophical approach to programming and demonstrates how these concepts manifest in actual code.
+                </p>
+            </div>
+
+            <!-- Foundational Principles Section -->
+            <h2 class="text-3xl font-bold gradient-text">Foundational Principles</h2>
+            <p class="mb-8">
+                These principles form the bedrock of philosophical programming, shaping how we approach software design from the very beginning.
+            </p>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">1</span>
+                    <h3 class="text-2xl font-bold">Reality-First Approach</h3>
+                </div>
+                <p>
+                    Design systems that mirror real-world interactions rather than technical convenience. Software should emulate real-world processes, constraints, and validations as closely as possible.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+<pre><code>public class PhoneNumber {
+    private final String value;
+    
+    public PhoneNumber(String phoneNumber) {
+        if (!isValidPhoneNumber(phoneNumber)) {
+            throw new InvalidPhoneNumberException(
+                "Invalid phone number format: " + phoneNumber);
+        }
+        this.value = phoneNumber;
+    }
+    
+    private boolean isValidPhoneNumber(String phoneNumber) {
+        // Implementation of phone validation logic
+        return phoneNumber != null && 
+               phoneNumber.matches("^\\+?[0-9]{10,15}$");
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+<pre><code>public class Customer {
+    private String phoneNumber; // Any string accepted without validation
+    
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber; // No validation
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Does this implementation reflect how this concept works in the real world?</li>
+                        <li>Have I considered all real-world constraints this entity would have?</li>
+                        <li>Would a non-technical person understand this model?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">2</span>
+                    <h3 class="text-2xl font-bold">Domain-Driven Analysis</h3>
+                </div>
+                <p>
+                    Begin by documenting requirements in plain language without technical jargon, focusing on what the system needs to do rather than how it will do it.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+                        <p><strong>Requirement:</strong> When a customer applies for an account, they must provide government-issued identification that proves their identity and address.</p>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+                        <p><strong>Requirement:</strong> Create a customer table with ID field and address field.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Have I captured the business requirement without introducing implementation details?</li>
+                        <li>Would a domain expert (not a developer) understand and agree with this description?</li>
+                        <li>Have I captured the "why" behind this requirement?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- System Architecture Guidelines Section -->
+            <h2 class="text-3xl font-bold gradient-text mt-16">System Architecture Guidelines</h2>
+            <p class="mb-8">
+                These guidelines help shape the overall structure of your system, ensuring that architectural decisions reflect philosophical principles.
+            </p>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">3</span>
+                    <h3 class="text-2xl font-bold">Actor Identification</h3>
+                </div>
+                <p>
+                    Identify all entities (living and non-living) that participate in the system. An actor is any person, system, or thing that interacts with or influences the process.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+<pre><code>// Clear separation of actors in the domain model
+public class Customer { /* ... */ }
+public class BankEmployee { /* ... */ }
+public class AccountApplication { /* ... */ }
+public class IdentificationDocument { /* ... */ }
+public class BankAccount { /* ... */ }</code></pre>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+<pre><code>// Mixing responsibilities of multiple actors
+public class AccountCreation {
+    private String customerName;
+    private String employeeId;
+    private String accountType;
+    private String documentNumber;
+    // Everything mixed together
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Have I identified all participants in this business process?</li>
+                        <li>Is each actor a distinct entity with clear boundaries?</li>
+                        <li>Does each actor have a single, well-defined role?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">4</span>
+                    <h3 class="text-2xl font-bold">Characteristic & Behavior Modeling</h3>
+                </div>
+                <p>
+                    For each actor, define characteristics (attributes) and behaviors (methods). Question default data types against real-world constraints.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+<pre><code>public class AccountType {
+    private final String code;
+    private final String description;
+    private final BigDecimal minimumBalance;
+    
+    // Constructor with validation
+    public AccountType(String code, String description, 
+                      BigDecimal minimumBalance) {
+        if (!isValidAccountTypeCode(code)) {
+            throw new InvalidAccountTypeException(
+                "Unknown account type: " + code);
+        }
+        this.code = code;
+        this.description = description;
+        this.minimumBalance = minimumBalance;
+    }
+    
+    private boolean isValidAccountTypeCode(String code) {
+        // We accept specific account types only
+        return code != null && 
+               Arrays.asList("SAVINGS", "CHECKING", "FIXED")
+                     .contains(code);
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+<pre><code>public class BankAccount {
+    private String accountType; // Any string allowed
+    
+    public void setAccountType(String accountType) {
+        this.accountType = accountType; // No validation
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Have I defined all necessary attributes for this entity?</li>
+                        <li>Do the data types reflect real-world constraints?</li>
+                        <li>Have I implemented proper validation for each attribute?</li>
+                        <li>Do the behaviors match what this entity should be able to do in the real world?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Object-Oriented Principles Section -->
+            <h2 class="text-3xl font-bold gradient-text mt-16">Object-Oriented Principles</h2>
+            <p class="mb-8">
+                These principles guide how we apply object-oriented concepts in a philosophically consistent manner.
+            </p>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">5</span>
+                    <h3 class="text-2xl font-bold">Ask What You Want, Not How You Want It</h3>
+                </div>
+                <p>
+                    Objects should be asked what to do, not how to do it. The object decides how to perform what is asked.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+<pre><code>// Ask the account to withdraw money - it decides how
+boolean success = account.withdraw(amount);</code></pre>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+<pre><code>// Telling how to do the withdrawal by manipulating properties directly
+if (account.getBalance() >= amount) {
+    account.setBalance(account.getBalance() - amount);
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Am I asking the object to perform an action or am I telling it how to do something?</li>
+                        <li>Does the method name describe what is being done, not how?</li>
+                        <li>Does the object maintain control over its internal state?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">6</span>
+                    <h3 class="text-2xl font-bold">Proper Encapsulation</h3>
+                </div>
+                <p>
+                    Protect object integrity through careful management of access. Don't provide setters for properties that shouldn't change after creation.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+<pre><code>public class BankAccount {
+    private final String accountNumber; // Immutable
+    private Money balance;
+    
+    public BankAccount(String accountNumber, Money initialDeposit) {
+        validateAccountNumber(accountNumber);
+        this.accountNumber = accountNumber;
+        this.balance = initialDeposit;
+    }
+    
+    // No setter for accountNumber as it should never change
+    
+    public boolean deposit(Money amount) {
+        // Object controls how this happens
+        if (amount.isPositive()) {
+            this.balance = this.balance.add(amount);
+            return true;
+        }
+        return false;
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+<pre><code>public class BankAccount {
+    private String accountNumber;
+    private BigDecimal balance;
+    
+    // Allows changing account number which should be immutable
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+    
+    // Exposes internal state for manipulation
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Can important properties be changed after object creation?</li>
+                        <li>Are there setters that shouldn't exist?</li>
+                        <li>Does the object protect its internal state?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Architectural Flow Section -->
+            <h2 class="text-3xl font-bold gradient-text mt-16">Architectural Flow</h2>
+            <p class="mb-8">
+                These guidelines help create architectures that reflect natural process flows and clear boundaries.
+            </p>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">7</span>
+                    <h3 class="text-2xl font-bold">Process Mapping</h3>
+                </div>
+                <p>
+                    Define connections between actors as processes or flows, representing the business logic to be implemented.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+<pre><code>public class AccountOpeningProcess {
+    private final CustomerVerificationService verificationService;
+    private final AccountCreationService accountService;
+    
+    public AccountOpeningResult execute(AccountApplication application) {
+        // Clear process flow
+        CustomerVerificationResult verification = verificationService.verify(
+            application.getCustomer(), 
+            application.getDocuments()
+        );
+        
+        if (!verification.isSuccessful()) {
+            return AccountOpeningResult.rejected(verification.getReason());
+        }
+        
+        return accountService.createAccount(
+            verification.getVerifiedCustomer(),
+            application.getAccountType()
+        );
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+<pre><code>public class AccountService {
+    public Account createAccount(AccountApplication app) {
+        // Mixing customer verification and account creation in one method
+        if (app.getCustomer().getName() == null) {
+            throw new IllegalArgumentException("Customer name is required");
+        }
+        
+        // More validation mixed with creation logic...
+        
+        Account account = new Account();
+        account.setType(app.getAccountType());
+        return account;
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Have I mapped out the process flow before implementing it?</li>
+                        <li>Does each step in the process correspond to a defined method?</li>
+                        <li>Are the connections between actors clear?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <div class="flex items-center mb-4">
+                    <span class="guideline-number">8</span>
+                    <h3 class="text-2xl font-bold">Layered Architecture</h3>
+                </div>
+                <p>
+                    Implement a clean separation of concerns using distinct layers for different responsibilities.
+                </p>
+                
+                <div class="example-container mt-6">
+                    <div class="example-good">
+                        <div class="example-heading">
+                            <i class="fas fa-check-circle mr-2"></i> Good Example
+                        </div>
+<pre><code>// Service layer handles business logic
+public class AccountService {
+    private final AccountRepository accountRepository;
+    
+    public Account createAccount(AccountCreationRequest request) {
+        // Business logic, validation
+        Account account = new Account(
+            request.getAccountType(),
+            request.getCustomerId(),
+            request.getInitialDeposit()
+        );
+        
+        return accountRepository.save(account);
+    }
+}
+
+// Repository layer handles data access
+public class AccountRepository {
+    private final DataSource dataSource;
+    
+    public Account save(Account account) {
+        // Data access code
+        return persistAccount(account);
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="example-bad">
+                        <div class="example-heading">
+                            <i class="fas fa-times-circle mr-2"></i> Bad Example
+                        </div>
+<pre><code>// Mixing concerns - service logic with data access
+public class AccountManager {
+    private final Connection dbConnection;
+    
+    public Account createAccount(String type, String customerId, 
+                                BigDecimal amount) {
+        Account account = new Account(type, customerId, amount);
+        
+        // Mixing business logic with data access
+        try (PreparedStatement stmt = dbConnection.prepareStatement(
+                "INSERT INTO accounts VALUES (?, ?, ?)")) {
+            stmt.setString(1, account.getId());
+            stmt.setString(2, account.getType());
+            stmt.setBigDecimal(3, account.getBalance());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        
+        return account;
+    }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                    <h4 class="font-bold mb-2">Review Questions:</h4>
+                    <ul class="list-disc ml-6">
+                        <li>Does each layer have a single responsibility?</li>
+                        <li>Are concerns properly separated?</li>
+                        <li>Could I replace one layer without changing others?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="bg-indigo-50 p-8 rounded-xl mt-16">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Bringing Philosophy to Practice</h2>
+                <p class="text-lg">
+                    These guidelines represent the bridge between philosophical concepts and daily coding practices. By following them, you transform abstract principles into concrete implementations that embody the deeper meaning of philosophical programming.
+                </p>
+                <p class="text-lg mt-4">
+                    Remember that philosophy is not separate from practice—it infuses every decision, from naming variables to designing architectures. As you apply these guidelines, you're not just writing better code; you're creating digital entities that faithfully represent reality and embody integrity in their very structure.
+                </p>
+            </div>
+
+            <!-- Additional Principles Button -->
+            <div class="mt-12 text-center">
+                <a href="complete-guidelines.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 shadow-md transition duration-300">
+                    <i class="fas fa-plus-circle mr-2"></i> Explore More Guidelines
+                </a>
+                <p class="text-gray-600 mt-3">
+                    The complete set contains comprehensive guidelines covering all aspects of philosophical programming.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Related Concepts -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Related Philosophical Concepts</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="chapter4.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 4:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Class Impersonation</h3>
+                    <p class="text-gray-600">Learn to mentally embody the classes you design to create more intuitive and coherent object models.</p>
+                </a>
+                
+                <a href="chapter5.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 5:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">True Encapsulation and Authority</h3>
+                    <p class="text-gray-600">Move beyond getters and setters to implement authority-based access control that mirrors real-world information sharing.</p>
+                </a>
+                
+                <a href="chapter9.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-center mb-4">
+                        <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 9:</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">The Philosophy of Naming</h3>
+                    <p class="text-gray-600">Understand how names shape our perception of reality and learn to choose names that create accurate mental models.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Writing Guidelines Preview -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Code Writing Guidelines Preview</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">9</span>
+                        <h3 class="text-xl font-bold">Narrative Programming</h3>
+                    </div>
+                    <p class="mb-4">
+                        Write code that tells a story. Each method should be a step in that story, making the code readable like a well-structured narrative.
+                    </p>
+                    <div class="bg-white/70 rounded-lg p-4">
+                        <h4 class="font-semibold text-indigo-800">Key Questions:</h4>
+                        <ul class="list-disc ml-6 text-gray-700">
+                            <li>Does the code read like a clear story?</li>
+                            <li>Do method names describe meaningful steps in a process?</li>
+                            <li>Could someone unfamiliar with the code understand what it does?</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">10</span>
+                        <h3 class="text-xl font-bold">Layer Discipline</h3>
+                    </div>
+                    <p class="mb-4">
+                        Maintain strict layer boundaries. Services should only talk to their own repositories or other services, not repositories from other domains.
+                    </p>
+                    <div class="bg-white/70 rounded-lg p-4">
+                        <h4 class="font-semibold text-indigo-800">Key Questions:</h4>
+                        <ul class="list-disc ml-6 text-gray-700">
+                            <li>Does this service interact only with its own repositories?</li>
+                            <li>If it needs functionality from another domain, does it call the appropriate service?</li>
+                            <li>Are layer boundaries clearly defined and respected?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">11</span>
+                        <h3 class="text-xl font-bold">Information Hiding</h3>
+                    </div>
+                    <p class="mb-4">
+                        Objects should not expose their internal data unnecessarily. Think of objects as people with privacy concerns.
+                    </p>
+                    <div class="bg-white/70 rounded-lg p-4">
+                        <h4 class="font-semibold text-indigo-800">Key Questions:</h4>
+                        <ul class="list-disc ml-6 text-gray-700">
+                            <li>Is this data necessary to expose outside the class?</li>
+                            <li>Have I considered privacy and information security?</li>
+                            <li>Could this information be misused if exposed?</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">12</span>
+                        <h3 class="text-xl font-bold">Meaningful Naming</h3>
+                    </div>
+                    <p class="mb-4">
+                        Names should fully describe the entity or action. Place information in the appropriate class based on real-world ownership.
+                    </p>
+                    <div class="bg-white/70 rounded-lg p-4">
+                        <h4 class="font-semibold text-indigo-800">Key Questions:</h4>
+                        <ul class="list-disc ml-6 text-gray-700">
+                            <li>Does this name clearly describe what the entity is or what the method does?</li>
+                            <li>Is this attribute in the correct class based on real-world relationships?</li>
+                            <li>Would a non-technical person understand what this name refers to?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Principles Preview -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Advanced Principles Preview</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-indigo-600">
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">13</span>
+                        <h3 class="text-xl font-bold">Method Atomicity</h3>
+                    </div>
+                    <p>
+                        Each method should have one behavior, including conditional checks. Use private methods to encapsulate different behaviors.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-indigo-600">
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">14</span>
+                        <h3 class="text-xl font-bold">Value Objects</h3>
+                    </div>
+                    <p>
+                        Use specialized value objects for domain concepts like Email, PhoneNumber, and Address to encapsulate validation and behavior.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-indigo-600">
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">15</span>
+                        <h3 class="text-xl font-bold">DTO Pattern</h3>
+                    </div>
+                    <p>
+                        Use Data Transfer Objects (DTOs) to move data between layers. Never expose domain entities directly to the presentation layer.
+                    </p>
+                </div>
+            </div>
+            <a href="complete-guidelines.html">
+            <div class="text-center mt-12">
+                <button class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                    Access Complete Guidelines
+                </button>
+            </div>
+        </a>
+        </div>
+    </section>
+
+    <!-- AI-Specific Guidelines Preview -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">AI-Specific Guidelines</h2>
+            <p class="text-center text-xl text-gray-600 mb-12">Principles for generating code using AI tools</p>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">1</span>
+                        <h3 class="text-xl font-bold">Context Comprehension</h3>
+                    </div>
+                    <p class="mb-4">
+                        AI tools should analyze the entire business context before generating code, understanding the real-world process rather than applying generic templates.
+                    </p>
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">2</span>
+                        <h3 class="text-xl font-bold">Domain-Specific Validation</h3>
+                    </div>
+                    <p>
+                        Generate appropriate validation logic for each domain concept rather than generic type checking.
+                    </p>
+                </div>
+                
+                <div>
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">3</span>
+                        <h3 class="text-xl font-bold">Layer-Aware Generation</h3>
+                    </div>
+                    <p class="mb-4">
+                        Generate code that respects architectural layering and separation of concerns.
+                    </p>
+                    <div class="flex items-center mb-4">
+                        <span class="guideline-number">4</span>
+                        <h3 class="text-xl font-bold">Test-Driven Examples</h3>
+                    </div>
+                    <p>
+                        Provide test cases alongside generated code to demonstrate expected behavior and edge cases.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">The Philosophy of Programming</h3>
+                    <p class="text-gray-300 mb-4">
+                        A profound approach to software development that treats programming as a philosophical discipline.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Principle Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Foundational Principles</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">System Architecture Guidelines</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Object-Oriented Principles</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Architectural Flow</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Code Writing Guidelines</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Advanced Principles</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">AI-Specific Guidelines</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navigate</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition">Table of Contents</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Download Complete Guidelines</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 The Philosophy of Programming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
