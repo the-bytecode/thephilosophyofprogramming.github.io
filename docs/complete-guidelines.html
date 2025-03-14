@@ -8,53 +8,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet">
     <style>
         body {
             font-family: 'Source Sans 3', sans-serif;
             color: #333;
             line-height: 1.6;
         }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
         }
+
         .content p, .content ul, .content ol {
             font-family: 'Source Serif 4', serif;
             font-size: 1.125rem;
             margin-bottom: 1.5rem;
         }
+
         .content h2 {
             margin-top: 2.5rem;
             margin-bottom: 1.5rem;
         }
+
         .content h3 {
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
+
         .content ul, .content ol {
             margin-left: 1.5rem;
         }
+
         .content ul {
             list-style-type: disc;
         }
+
         .content ol {
             list-style-type: decimal;
         }
+
         .content li {
             margin-bottom: 0.5rem;
         }
+
         blockquote {
             font-style: italic;
             border-left: 4px solid #8B5CF6;
             padding-left: 1.5rem;
             margin: 2rem 0;
         }
+
         .gradient-text {
             background: linear-gradient(45deg, #3B82F6, #8B5CF6);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
+
         pre {
             font-family: 'JetBrains Mono', monospace;
             background-color: #f8f9fa;
@@ -64,6 +76,7 @@
             margin-bottom: 1.5rem;
             border: 1px solid #e2e8f0;
         }
+
         code {
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.9rem;
@@ -71,17 +84,20 @@
             padding: 0.2rem 0.4rem;
             border-radius: 0.25rem;
         }
+
         pre code {
             background-color: transparent;
             padding: 0;
             font-size: 0.85rem;
             color: #1e293b;
         }
+
         .guidelines-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
+
         .guideline-card {
             background-color: #fff;
             border-radius: 0.75rem;
@@ -90,10 +106,12 @@
             transition: all 0.3s ease;
             border: 1px solid #e5e7eb;
         }
+
         .guideline-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
+
         .guideline-number {
             display: inline-block;
             width: 2rem;
@@ -106,47 +124,56 @@
             font-weight: 600;
             margin-right: 0.5rem;
         }
+
         .example-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
+
         @media (max-width: 768px) {
             .example-container {
                 grid-template-columns: 1fr;
             }
         }
+
         .example-good {
             background-color: #f0fdf4;
             border: 1px solid #86efac;
             border-radius: 0.5rem;
             padding: 1rem;
         }
+
         .example-bad {
             background-color: #fef2f2;
             border: 1px solid #fecaca;
             border-radius: 0.5rem;
             padding: 1rem;
         }
+
         .example-heading {
             font-weight: 600;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
         }
+
         .example-good .example-heading {
             color: #16a34a;
         }
+
         .example-bad .example-heading {
             color: #dc2626;
         }
+
         .table-of-contents {
             position: sticky;
             top: 100px;
             max-height: calc(100vh - 120px);
             overflow-y: auto;
         }
+
         .table-of-contents a {
             display: block;
             padding: 0.5rem;
@@ -155,16 +182,19 @@
             border-left: 3px solid transparent;
             transition: all 0.3s ease;
         }
+
         .table-of-contents a:hover {
             color: #4F46E5;
             border-left-color: #4F46E5;
             background-color: #EEF2FF;
         }
+
         .table-of-contents a.active {
             color: #4F46E5;
             border-left-color: #4F46E5;
             font-weight: 600;
         }
+
         .section-divider {
             height: 1px;
             background: linear-gradient(to right, transparent, #8B5CF6, transparent);
@@ -173,114 +203,120 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md py-4 sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-indigo-600 transition duration-300">
-                    <i class="fas fa-book-open mr-2"></i>Philosophy of Programming
+<!-- Navigation -->
+<nav class="bg-white shadow-md py-4 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-indigo-600 transition duration-300">
+                <i class="fas fa-book-open mr-2"></i>Philosophy of Programming
+            </a>
+            <div class="flex space-x-4">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
+                    <i class="fas fa-home"></i> <span class="hidden md:inline ml-1">Home</span>
                 </a>
-                <div class="flex space-x-4">
-                    <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
-                        <i class="fas fa-home"></i> <span class="hidden md:inline ml-1">Home</span>
-                    </a>
-                    <a href="conclusion.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
-                        <i class="fas fa-arrow-right"></i> <span class="hidden md:inline ml-1">Conclusion</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-indigo-600 font-semibold mb-2">Chapter 15</p>
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">The Practical Philosophy: Coding Guidelines</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                A comprehensive collection of philosophical principles applied to everyday coding practices, transforming technical implementation into an expression of digital values.
-            </p>
-        </div>
-    </header>
-
-    <div class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between py-4 chapter-nav">
-                <span class="text-gray-400">
-                    <i class="fas fa-book mr-2"></i>Part IV: Applied Philosophical Programming
-                </span>
-                <div class="flex space-x-4">
-                    <a href="chapter14.html" class="text-gray-600 hover:text-indigo-600 flex items-center">
-                        <i class="fas fa-arrow-left mr-1"></i> Previous: Testing with Philosophical Focus
-                    </a>
-                    <a href="conclusion.html" class="text-indigo-600 hover:text-indigo-800 flex items-center">
-                        Next: Conclusion <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
+                <a href="conclusion.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">
+                    <i class="fas fa-arrow-right"></i> <span class="hidden md:inline ml-1">Conclusion</span>
+                </a>
             </div>
         </div>
     </div>
-    
+</nav>
 
-    <!-- Main Content -->
-    <main class="bg-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row">
-                <!-- Table of Contents (Sidebar) -->
-                <div class="md:w-1/4 mb-8 md:mb-0 pr-0 md:pr-6">
-                    <div class="bg-white rounded-lg shadow-md p-6 table-of-contents">
-                        <h3 class="text-lg font-bold mb-4 gradient-text">Table of Contents</h3>
-                        <div class="space-y-1">
-                            <a href="#foundational-principles" class="rounded-md">Foundational Principles</a>
-                            <a href="#system-architecture" class="rounded-md">System Architecture Guidelines</a>
-                            <a href="#object-oriented" class="rounded-md">Object-Oriented Principles</a>
-                            <a href="#architectural-flow" class="rounded-md">Architectural Flow</a>
-                            <a href="#single-responsibility" class="rounded-md">Single Responsibility Principle</a>
-                            <a href="#code-writing" class="rounded-md">Code Writing Guidelines</a>
-                            <a href="#layer-discipline" class="rounded-md">Layer Discipline</a>
-                            <a href="#information-hiding" class="rounded-md">Information Hiding</a>
-                            <a href="#meaningful-naming" class="rounded-md">Meaningful Naming</a>
-                            <a href="#advanced-principles" class="rounded-md">Advanced Principles</a>
-                            <a href="#method-atomicity" class="rounded-md">Method Atomicity</a>
-                            <a href="#value-objects" class="rounded-md">Value Objects</a>
-                            <a href="#dto-pattern" class="rounded-md">DTO Pattern</a>
-                            <a href="#error-handling" class="rounded-md">Error Handling</a>
-                            <a href="#naming-guidelines" class="rounded-md">Naming Guidelines</a>
-                        </div>
+
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-50 to-indigo-50 py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+        <p class="text-indigo-600 font-semibold mb-2">Chapter 15</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">The Practical Philosophy: Coding Guidelines</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            A comprehensive collection of philosophical principles applied to everyday coding practices, transforming
+            technical implementation into an expression of digital values.
+        </p>
+    </div>
+</header>
+
+<div class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between py-4 chapter-nav">
+                <span class="text-gray-400">
+                    <i class="fas fa-book mr-2"></i>Part IV: Applied Philosophical Programming
+                </span>
+            <div class="flex space-x-4">
+                <a href="chapter14.html" class="text-gray-600 hover:text-indigo-600 flex items-center">
+                    <i class="fas fa-arrow-left mr-1"></i> Previous: Testing with Philosophical Focus
+                </a>
+                <a href="conclusion.html" class="text-indigo-600 hover:text-indigo-800 flex items-center">
+                    Next: Conclusion <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Main Content -->
+<main class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row">
+            <!-- Table of Contents (Sidebar) -->
+            <div class="md:w-1/4 mb-8 md:mb-0 pr-0 md:pr-6">
+                <div class="bg-white rounded-lg shadow-md p-6 table-of-contents">
+                    <h3 class="text-lg font-bold mb-4 gradient-text">Table of Contents</h3>
+                    <div class="space-y-1">
+                        <a href="#foundational-principles" class="rounded-md">Foundational Principles</a>
+                        <a href="#system-architecture" class="rounded-md">System Architecture Guidelines</a>
+                        <a href="#object-oriented" class="rounded-md">Object-Oriented Principles</a>
+                        <a href="#architectural-flow" class="rounded-md">Architectural Flow</a>
+                        <a href="#single-responsibility" class="rounded-md">Single Responsibility Principle</a>
+                        <a href="#code-writing" class="rounded-md">Code Writing Guidelines</a>
+                        <a href="#layer-discipline" class="rounded-md">Layer Discipline</a>
+                        <a href="#information-hiding" class="rounded-md">Information Hiding</a>
+                        <a href="#meaningful-naming" class="rounded-md">Meaningful Naming</a>
+                        <a href="#advanced-principles" class="rounded-md">Advanced Principles</a>
+                        <a href="#method-atomicity" class="rounded-md">Method Atomicity</a>
+                        <a href="#value-objects" class="rounded-md">Value Objects</a>
+                        <a href="#dto-pattern" class="rounded-md">DTO Pattern</a>
+                        <a href="#error-handling" class="rounded-md">Error Handling</a>
+                        <a href="#naming-guidelines" class="rounded-md">Naming Guidelines</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Main Content -->
-                <div class="md:w-3/4 content">
-                    <div class="mb-16">
-                        <p class="text-xl">
-                            This guide bridges philosophical principles with practical coding guidelines that you can apply in your daily work. Each guideline is grounded in the philosophical approach to programming and demonstrates how these concepts manifest in actual code.
+            <!-- Main Content -->
+            <div class="md:w-3/4 content">
+                <div class="mb-16">
+                    <p class="text-xl">
+                        This guide bridges philosophical principles with practical coding guidelines that you can apply
+                        in your daily work. Each guideline is grounded in the philosophical approach to programming and
+                        demonstrates how these concepts manifest in actual code.
+                    </p>
+                </div>
+
+                <!-- Foundational Principles Section -->
+                <section id="foundational-principles">
+                    <h2 class="text-3xl font-bold gradient-text">Foundational Principles</h2>
+                    <p class="mb-8">
+                        These principles form the bedrock of philosophical programming, shaping how we approach software
+                        design from the very beginning.
+                    </p>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">1</span>
+                            <h3 class="text-2xl font-bold">Reality-First Approach</h3>
+                        </div>
+                        <p>
+                            Design systems that mirror real-world interactions rather than technical convenience.
+                            Software should emulate real-world processes, constraints, and validations as closely as
+                            possible.
                         </p>
-                    </div>
 
-                    <!-- Foundational Principles Section -->
-                    <section id="foundational-principles">
-                        <h2 class="text-3xl font-bold gradient-text">Foundational Principles</h2>
-                        <p class="mb-8">
-                            These principles form the bedrock of philosophical programming, shaping how we approach software design from the very beginning.
-                        </p>
-
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">1</span>
-                                <h3 class="text-2xl font-bold">Reality-First Approach</h3>
-                            </div>
-                            <p>
-                                Design systems that mirror real-world interactions rather than technical convenience. Software should emulate real-world processes, constraints, and validations as closely as possible.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class PhoneNumber {
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class PhoneNumber {
     private final String value;
     
     public PhoneNumber(String phoneNumber) {
@@ -297,104 +333,113 @@
                phoneNumber.matches("^\\+?[0-9]{10,15}$");
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class Customer {
+                                <pre><code>public class Customer {
     private String phoneNumber; // Any string accepted without validation
     
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber; // No validation
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Does this implementation reflect how this concept works in the real world?</li>
-                                    <li>Have I considered all real-world constraints this entity would have?</li>
-                                    <li>Would a non-technical person understand this model?</li>
-                                </ul>
                             </div>
                         </div>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">2</span>
-                                <h3 class="text-2xl font-bold">Domain-Driven Analysis</h3>
-                            </div>
-                            <p>
-                                Begin by documenting requirements in plain language without technical jargon, focusing on what the system needs to do rather than how it will do it.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-                                    <p><strong>Requirement:</strong> When a customer applies for an account, they must provide government-issued identification that proves their identity and address.</p>
-                                </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-                                    <p><strong>Requirement:</strong> Create a customer table with ID field and address field.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Have I captured the business requirement without introducing implementation details?</li>
-                                    <li>Would a domain expert (not a developer) understand and agree with this description?</li>
-                                    <li>Have I captured the "why" behind this requirement?</li>
-                                </ul>
-                            </div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does this implementation reflect how this concept works in the real world?</li>
+                                <li>Have I considered all real-world constraints this entity would have?</li>
+                                <li>Would a non-technical person understand this model?</li>
+                            </ul>
                         </div>
-                    </section>
+                    </div>
 
-                    <div class="section-divider"></div>
-
-                    <!-- System Architecture Guidelines Section -->
-                    <section id="system-architecture">
-                        <h2 class="text-3xl font-bold gradient-text">System Architecture Guidelines</h2>
-                        <p class="mb-8">
-                            These guidelines help shape the overall structure of your system, ensuring that architectural decisions reflect philosophical principles.
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">2</span>
+                            <h3 class="text-2xl font-bold">Domain-Driven Analysis</h3>
+                        </div>
+                        <p>
+                            Begin by documenting requirements in plain language without technical jargon, focusing on
+                            what the system needs to do rather than how it will do it.
                         </p>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">3</span>
-                                <h3 class="text-2xl font-bold">Actor Identification</h3>
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <p><strong>Requirement:</strong> When a customer applies for an account, they must
+                                    provide government-issued identification that proves their identity and address.</p>
                             </div>
-                            <p>
-                                Identify all entities (living and non-living) that participate in the system. An actor is any person, system, or thing that interacts with or influences the process.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>// Clear separation of actors in the domain model
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
+                                </div>
+                                <p><strong>Requirement:</strong> Create a customer table with ID field and address
+                                    field.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Have I captured the business requirement without introducing implementation
+                                    details?
+                                </li>
+                                <li>Would a domain expert (not a developer) understand and agree with this
+                                    description?
+                                </li>
+                                <li>Have I captured the "why" behind this requirement?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="section-divider"></div>
+
+                <!-- System Architecture Guidelines Section -->
+                <section id="system-architecture">
+                    <h2 class="text-3xl font-bold gradient-text">System Architecture Guidelines</h2>
+                    <p class="mb-8">
+                        These guidelines help shape the overall structure of your system, ensuring that architectural
+                        decisions reflect philosophical principles.
+                    </p>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">3</span>
+                            <h3 class="text-2xl font-bold">Actor Identification</h3>
+                        </div>
+                        <p>
+                            Identify all entities (living and non-living) that participate in the system. An actor is
+                            any person, system, or thing that interacts with or influences the process.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>// Clear separation of actors in the domain model
 public class Customer { /* ... */ }
 public class BankEmployee { /* ... */ }
 public class AccountApplication { /* ... */ }
 public class IdentificationDocument { /* ... */ }
 public class BankAccount { /* ... */ }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>// Mixing responsibilities of multiple actors
+                                <pre><code>// Mixing responsibilities of multiple actors
 public class AccountCreation {
     private String customerName;
     private String employeeId;
@@ -402,34 +447,35 @@ public class AccountCreation {
     private String documentNumber;
     // Everything mixed together
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Have I identified all participants in this business process?</li>
-                                    <li>Is each actor a distinct entity with clear boundaries?</li>
-                                    <li>Does each actor have a single, well-defined role?</li>
-                                </ul>
                             </div>
                         </div>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">4</span>
-                                <h3 class="text-2xl font-bold">Characteristic & Behavior Modeling</h3>
-                            </div>
-                            <p>
-                                For each actor, define characteristics (attributes) and behaviors (methods). Question default data types against real-world constraints.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class AccountType {
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Have I identified all participants in this business process?</li>
+                                <li>Is each actor a distinct entity with clear boundaries?</li>
+                                <li>Does each actor have a single, well-defined role?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">4</span>
+                            <h3 class="text-2xl font-bold">Characteristic & Behavior Modeling</h3>
+                        </div>
+                        <p>
+                            For each actor, define characteristics (attributes) and behaviors (methods). Question
+                            default data types against real-world constraints.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class AccountType {
     private final String code;
     private final String description;
     private final BigDecimal minimumBalance;
@@ -453,97 +499,102 @@ public class AccountCreation {
                      .contains(code);
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class BankAccount {
+                                <pre><code>public class BankAccount {
     private String accountType; // Any string allowed
     
     public void setAccountType(String accountType) {
         this.accountType = accountType; // No validation
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Have I defined all necessary attributes for this entity?</li>
-                                    <li>Do the data types reflect real-world constraints?</li>
-                                    <li>Have I implemented proper validation for each attribute?</li>
-                                    <li>Do the behaviors match what this entity should be able to do in the real world?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Have I defined all necessary attributes for this entity?</li>
+                                <li>Do the data types reflect real-world constraints?</li>
+                                <li>Have I implemented proper validation for each attribute?</li>
+                                <li>Do the behaviors match what this entity should be able to do in the real world?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Object-Oriented Principles Section -->
-                    <section id="object-oriented">
-                        <h2 class="text-3xl font-bold gradient-text">Object-Oriented Principles</h2>
-                        <p class="mb-8">
-                            These principles guide how we apply object-oriented concepts in a philosophically consistent manner.
+                <div class="section-divider"></div>
+
+                <!-- Object-Oriented Principles Section -->
+                <section id="object-oriented">
+                    <h2 class="text-3xl font-bold gradient-text">Object-Oriented Principles</h2>
+                    <p class="mb-8">
+                        These principles guide how we apply object-oriented concepts in a philosophically consistent
+                        manner.
+                    </p>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">5</span>
+                            <h3 class="text-2xl font-bold">Ask What You Want, Not How You Want It</h3>
+                        </div>
+                        <p>
+                            Objects should be asked what to do, not how to do it. The object decides how to perform what
+                            is asked.
                         </p>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">5</span>
-                                <h3 class="text-2xl font-bold">Ask What You Want, Not How You Want It</h3>
-                            </div>
-                            <p>
-                                Objects should be asked what to do, not how to do it. The object decides how to perform what is asked.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>// Ask the account to withdraw money - it decides how
-boolean success = account.withdraw(amount);</code></pre>
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>// Telling how to do the withdrawal by manipulating properties directly
+                                <pre><code>// Ask the account to withdraw money - it decides how
+boolean success = account.withdraw(amount);</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
+                                </div>
+                                <pre><code>// Telling how to do the withdrawal by manipulating properties directly
 if (account.getBalance() >= amount) {
     account.setBalance(account.getBalance() - amount);
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Am I asking the object to perform an action or am I telling it how to do something?</li>
-                                    <li>Does the method name describe what is being done, not how?</li>
-                                    <li>Does the object maintain control over its internal state?</li>
-                                </ul>
                             </div>
                         </div>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">6</span>
-                                <h3 class="text-2xl font-bold">Proper Encapsulation</h3>
-                            </div>
-                            <p>
-                                Protect object integrity through careful management of access. Don't provide setters for properties that shouldn't change after creation.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class BankAccount {
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Am I asking the object to perform an action or am I telling it how to do
+                                    something?
+                                </li>
+                                <li>Does the method name describe what is being done, not how?</li>
+                                <li>Does the object maintain control over its internal state?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">6</span>
+                            <h3 class="text-2xl font-bold">Proper Encapsulation</h3>
+                        </div>
+                        <p>
+                            Protect object integrity through careful management of access. Don't provide setters for
+                            properties that shouldn't change after creation.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class BankAccount {
     private final String accountNumber; // Immutable
     private Money balance;
     
@@ -564,13 +615,13 @@ if (account.getBalance() >= amount) {
         return false;
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class BankAccount {
+                                <pre><code>public class BankAccount {
     private String accountNumber;
     private BigDecimal balance;
     
@@ -584,44 +635,46 @@ if (account.getBalance() >= amount) {
         this.balance = balance;
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Can important properties be changed after object creation?</li>
-                                    <li>Are there setters that shouldn't exist?</li>
-                                    <li>Does the object protect its internal state?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Can important properties be changed after object creation?</li>
+                                <li>Are there setters that shouldn't exist?</li>
+                                <li>Does the object protect its internal state?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Architectural Flow Section -->
-                    <section id="architectural-flow">
-                        <h2 class="text-3xl font-bold gradient-text">Architectural Flow</h2>
-                        <p class="mb-8">
-                            These guidelines help create architectures that reflect natural process flows and clear boundaries.
+                <div class="section-divider"></div>
+
+                <!-- Architectural Flow Section -->
+                <section id="architectural-flow">
+                    <h2 class="text-3xl font-bold gradient-text">Architectural Flow</h2>
+                    <p class="mb-8">
+                        These guidelines help create architectures that reflect natural process flows and clear
+                        boundaries.
+                    </p>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">7</span>
+                            <h3 class="text-2xl font-bold">Process Mapping</h3>
+                        </div>
+                        <p>
+                            Define connections between actors as processes or flows, representing the business logic to
+                            be implemented.
                         </p>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">7</span>
-                                <h3 class="text-2xl font-bold">Process Mapping</h3>
-                            </div>
-                            <p>
-                                Define connections between actors as processes or flows, representing the business logic to be implemented.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class AccountOpeningProcess {
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class AccountOpeningProcess {
     private final CustomerVerificationService verificationService;
     private final AccountCreationService accountService;
     
@@ -642,13 +695,13 @@ if (account.getBalance() >= amount) {
         );
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class AccountService {
+                                <pre><code>public class AccountService {
     public Account createAccount(AccountApplication app) {
         // Mixing customer verification and account creation in one method
         if (app.getCustomer().getName() == null) {
@@ -662,34 +715,35 @@ if (account.getBalance() >= amount) {
         return account;
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Have I mapped out the process flow before implementing it?</li>
-                                    <li>Does each step in the process correspond to a defined method?</li>
-                                    <li>Are the connections between actors clear?</li>
-                                </ul>
                             </div>
                         </div>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">8</span>
-                                <h3 class="text-2xl font-bold">Layered Architecture</h3>
-                            </div>
-                            <p>
-                                Implement a clean separation of concerns using distinct layers for different responsibilities.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>// Service layer handles business logic
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Have I mapped out the process flow before implementing it?</li>
+                                <li>Does each step in the process correspond to a defined method?</li>
+                                <li>Are the connections between actors clear?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">8</span>
+                            <h3 class="text-2xl font-bold">Layered Architecture</h3>
+                        </div>
+                        <p>
+                            Implement a clean separation of concerns using distinct layers for different
+                            responsibilities.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>// Service layer handles business logic
 public class AccountService {
     private final AccountRepository accountRepository;
     
@@ -714,13 +768,13 @@ public class AccountRepository {
         return persistAccount(account);
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>// Mixing concerns - service logic with data access
+                                <pre><code>// Mixing concerns - service logic with data access
 public class AccountManager {
     private final Connection dbConnection;
     
@@ -742,39 +796,40 @@ public class AccountManager {
         return account;
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Does each layer have a single responsibility?</li>
-                                    <li>Are concerns properly separated?</li>
-                                    <li>Could I replace one layer without changing others?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does each layer have a single responsibility?</li>
+                                <li>Are concerns properly separated?</li>
+                                <li>Could I replace one layer without changing others?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Single Responsibility Principle -->
-                    <section id="single-responsibility">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">9</span>
-                                <h3 class="text-2xl font-bold">Single Responsibility Principle</h3>
-                            </div>
-                            <p>
-                                Each method should do exactly one thing. Complex operations should be broken down into multiple focused methods.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public Account openAccount(AccountApplication application) {
+                <div class="section-divider"></div>
+
+                <!-- Single Responsibility Principle -->
+                <section id="single-responsibility">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">9</span>
+                            <h3 class="text-2xl font-bold">Single Responsibility Principle</h3>
+                        </div>
+                        <p>
+                            Each method should do exactly one thing. Complex operations should be broken down into
+                            multiple focused methods.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public Account openAccount(AccountApplication application) {
     validateApplication(application);
     Customer customer = getOrCreateCustomer(application.getCustomerDetails());
     Account account = createAccount(application.getAccountType(), customer);
@@ -797,13 +852,13 @@ private Account createAccount(String accountType, Customer customer) {
 private void notifyCustomer(Customer customer, Account account) {
     // Notification logic only
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public Account openAccount(AccountApplication application) {
+                                <pre><code>public Account openAccount(AccountApplication application) {
     // Validation mixed with creation mixed with notification
     if (application == null || application.getCustomerDetails() == null) {
         throw new IllegalArgumentException("Application incomplete");
@@ -825,44 +880,45 @@ private void notifyCustomer(Customer customer, Account account) {
     
     return account;
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Does this method do exactly one thing?</li>
-                                    <li>Could I break this method into smaller, more focused methods?</li>
-                                    <li>Does the method name accurately describe its single responsibility?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does this method do exactly one thing?</li>
+                                <li>Could I break this method into smaller, more focused methods?</li>
+                                <li>Does the method name accurately describe its single responsibility?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Code Writing Guidelines -->
-                    <section id="code-writing">
-                        <h2 class="text-3xl font-bold gradient-text">Code Writing Guidelines</h2>
-                        <p class="mb-8">
-                            These guidelines focus on how to structure and write code that follows philosophical principles.
+                <div class="section-divider"></div>
+
+                <!-- Code Writing Guidelines -->
+                <section id="code-writing">
+                    <h2 class="text-3xl font-bold gradient-text">Code Writing Guidelines</h2>
+                    <p class="mb-8">
+                        These guidelines focus on how to structure and write code that follows philosophical principles.
+                    </p>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">10</span>
+                            <h3 class="text-2xl font-bold">Narrative Programming</h3>
+                        </div>
+                        <p>
+                            Write code that tells a story. Each method should be a step in that story, making the code
+                            readable like a well-structured narrative.
                         </p>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">10</span>
-                                <h3 class="text-2xl font-bold">Narrative Programming</h3>
-                            </div>
-                            <p>
-                                Write code that tells a story. Each method should be a step in that story, making the code readable like a well-structured narrative.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public void processAccountApplication(Application application) {
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public void processAccountApplication(Application application) {
     validateApplicationCompleteness(application);
     verifyCustomerIdentity(application.getCustomer(), application.getDocuments());
     checkCreditHistory(application.getCustomer());
@@ -870,13 +926,13 @@ private void notifyCustomer(Customer customer, Account account) {
     createCustomerAccount(application);
     dispatchWelcomeKit(application.getCustomer());
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public void process(Application app) {
+                                <pre><code>public void process(Application app) {
     // Hard to follow narrative with cryptic method names and complex logic
     if (check(app) && verify(app.getCustomer())) {
         int score = calcScore(app.getCustomer());
@@ -888,39 +944,40 @@ private void notifyCustomer(Customer customer, Account account) {
         }
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Does the code read like a clear story?</li>
-                                    <li>Do method names describe meaningful steps in a process?</li>
-                                    <li>Could someone unfamiliar with the code understand what it does?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does the code read like a clear story?</li>
+                                <li>Do method names describe meaningful steps in a process?</li>
+                                <li>Could someone unfamiliar with the code understand what it does?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Layer Discipline Section -->
-                    <section id="layer-discipline">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">11</span>
-                                <h3 class="text-2xl font-bold">Layer Discipline</h3>
-                            </div>
-                            <p>
-                                Maintain strict layer boundaries. Services should only talk to their own repositories or other services, not repositories from other domains.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class CustomerService {
+                <div class="section-divider"></div>
+
+                <!-- Layer Discipline Section -->
+                <section id="layer-discipline">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">11</span>
+                            <h3 class="text-2xl font-bold">Layer Discipline</h3>
+                        </div>
+                        <p>
+                            Maintain strict layer boundaries. Services should only talk to their own repositories or
+                            other services, not repositories from other domains.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class CustomerService {
     private final CustomerRepository customerRepository;
     private final DocumentService documentService; // Call another service, not its repo
     
@@ -931,13 +988,13 @@ private void notifyCustomer(Customer customer, Account account) {
         return newCustomer;
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class CustomerService {
+                                <pre><code>public class CustomerService {
     private final CustomerRepository customerRepository;
     private final DocumentRepository documentRepository; // Wrong! Should talk to DocumentService
     
@@ -952,39 +1009,42 @@ private void notifyCustomer(Customer customer, Account account) {
         return newCustomer;
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Does this service interact only with its own repositories?</li>
-                                    <li>If it needs functionality from another domain, does it call the appropriate service?</li>
-                                    <li>Are layer boundaries clearly defined and respected?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does this service interact only with its own repositories?</li>
+                                <li>If it needs functionality from another domain, does it call the appropriate
+                                    service?
+                                </li>
+                                <li>Are layer boundaries clearly defined and respected?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Information Hiding Section -->
-                    <section id="information-hiding">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">12</span>
-                                <h3 class="text-2xl font-bold">Information Hiding</h3>
-                            </div>
-                            <p>
-                                Objects should not expose their internal data unnecessarily. Think of objects as people with privacy concerns.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class Customer {
+                <div class="section-divider"></div>
+
+                <!-- Information Hiding Section -->
+                <section id="information-hiding">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">12</span>
+                            <h3 class="text-2xl font-bold">Information Hiding</h3>
+                        </div>
+                        <p>
+                            Objects should not expose their internal data unnecessarily. Think of objects as people with
+                            privacy concerns.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class Customer {
     private final String taxId;
     
     // Only exposes masked version for display
@@ -997,13 +1057,13 @@ private void notifyCustomer(Customer customer, Account account) {
         return this.taxId.equals(providedTaxId);
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class Customer {
+                                <pre><code>public class Customer {
     private String taxId;
     
     // Exposes sensitive information unnecessarily
@@ -1015,96 +1075,98 @@ private void notifyCustomer(Customer customer, Account account) {
         this.taxId = taxId;
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Is this data necessary to expose outside the class?</li>
-                                    <li>Have I considered privacy and information security?</li>
-                                    <li>Could this information be misused if exposed?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Is this data necessary to expose outside the class?</li>
+                                <li>Have I considered privacy and information security?</li>
+                                <li>Could this information be misused if exposed?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Meaningful Naming Section -->
-                    <section id="meaningful-naming">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">13</span>
-                                <h3 class="text-2xl font-bold">Meaningful Naming</h3>
-                            </div>
-                            <p>
-                                Names should fully describe the entity or action. Place information in the appropriate class based on real-world ownership.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>class Customer {
+                <div class="section-divider"></div>
+
+                <!-- Meaningful Naming Section -->
+                <section id="meaningful-naming">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">13</span>
+                            <h3 class="text-2xl font-bold">Meaningful Naming</h3>
+                        </div>
+                        <p>
+                            Names should fully describe the entity or action. Place information in the appropriate class
+                            based on real-world ownership.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>class Customer {
     private Address mailingAddress;
 }
 
 class BankBranch {
     private Address branchAddress;
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>class Customer {
+                                <pre><code>class Customer {
     private Address mailingAddress;
     private Address branchAddress; // Doesn't belong to customer!
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Does this name clearly describe what the entity is or what the method does?</li>
-                                    <li>Is this attribute in the correct class based on real-world relationships?</li>
-                                    <li>Would a non-technical person understand what this name refers to?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does this name clearly describe what the entity is or what the method does?</li>
+                                <li>Is this attribute in the correct class based on real-world relationships?</li>
+                                <li>Would a non-technical person understand what this name refers to?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Advanced Principles Section -->
-                    <section id="advanced-principles">
-                        <h2 class="text-3xl font-bold gradient-text">Advanced Principles</h2>
-                        <p class="mb-8">
-                            These advanced principles take the philosophical approach to coding to a deeper level.
+                <div class="section-divider"></div>
+
+                <!-- Advanced Principles Section -->
+                <section id="advanced-principles">
+                    <h2 class="text-3xl font-bold gradient-text">Advanced Principles</h2>
+                    <p class="mb-8">
+                        These advanced principles take the philosophical approach to coding to a deeper level.
+                    </p>
+                </section>
+
+                <!-- Method Atomicity Section -->
+                <section id="method-atomicity">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">14</span>
+                            <h3 class="text-2xl font-bold">Method Atomicity</h3>
+                        </div>
+                        <p>
+                            Each method should have one behavior, including conditional checks. Use private methods to
+                            encapsulate different behaviors.
                         </p>
-                    </section>
 
-                    <!-- Method Atomicity Section -->
-                    <section id="method-atomicity">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">14</span>
-                                <h3 class="text-2xl font-bold">Method Atomicity</h3>
-                            </div>
-                            <p>
-                                Each method should have one behavior, including conditional checks. Use private methods to encapsulate different behaviors.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public AccountOpeningResult processApplication(AccountApplication application) {
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public AccountOpeningResult processApplication(AccountApplication application) {
     if (!isApplicationComplete(application)) {
         return AccountOpeningResult.incomplete();
     }
@@ -1120,13 +1182,13 @@ private boolean isApplicationComplete(AccountApplication application) {
 private AccountOpeningResult openAccount(AccountApplication application) {
     // Account opening logic
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public AccountOpeningResult processApplication(AccountApplication application) {
+                                <pre><code>public AccountOpeningResult processApplication(AccountApplication application) {
     // Multiple behaviors in one method
     if (application.getName() == null || application.getAddress() == null) {
         return AccountOpeningResult.incomplete();
@@ -1146,37 +1208,38 @@ private AccountOpeningResult openAccount(AccountApplication application) {
     
     return AccountOpeningResult.success(account);
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Does this method do exactly one thing?</li>
-                                    <li>Have I separated conditional checks into their own methods?</li>
-                                    <li>Could I extract any part of this method into a more focused method?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Value Objects Section -->
-                    <section id="value-objects">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">15</span>
-                                <h3 class="text-2xl font-bold">Value Objects</h3>
-                            </div>
-                            <p>
-                                Use specialized value objects for domain concepts like Email, PhoneNumber, and Address to encapsulate validation and behavior.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class Email {
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does this method do exactly one thing?</li>
+                                <li>Have I separated conditional checks into their own methods?</li>
+                                <li>Could I extract any part of this method into a more focused method?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Value Objects Section -->
+                <section id="value-objects">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">15</span>
+                            <h3 class="text-2xl font-bold">Value Objects</h3>
+                        </div>
+                        <p>
+                            Use specialized value objects for domain concepts like Email, PhoneNumber, and Address to
+                            encapsulate validation and behavior.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class Email {
     private final String value;
     
     public Email(String email) {
@@ -1197,50 +1260,51 @@ private AccountOpeningResult openAccount(AccountApplication application) {
         return value;
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class Customer {
+                                <pre><code>public class Customer {
     private String email; // Just a string, no validation
     
     public void setEmail(String email) {
         this.email = email; // No validation
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Can this attribute be represented as a value object?</li>
-                                    <li>Does this concept have its own validation rules?</li>
-                                    <li>Would a dedicated class improve encapsulation and reusability?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- DTO Pattern Section -->
-                    <section id="dto-pattern">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">16</span>
-                                <h3 class="text-2xl font-bold">DTO Pattern</h3>
-                            </div>
-                            <p>
-                                Use Data Transfer Objects (DTOs) to move data between layers. Never expose domain entities directly to the presentation layer.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>// DTO for API responses
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Can this attribute be represented as a value object?</li>
+                                <li>Does this concept have its own validation rules?</li>
+                                <li>Would a dedicated class improve encapsulation and reusability?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DTO Pattern Section -->
+                <section id="dto-pattern">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">16</span>
+                            <h3 class="text-2xl font-bold">DTO Pattern</h3>
+                        </div>
+                        <p>
+                            Use Data Transfer Objects (DTOs) to move data between layers. Never expose domain entities
+                            directly to the presentation layer.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>// DTO for API responses
 public class AccountDTO {
     private String id;
     private String accountNumber;
@@ -1275,13 +1339,13 @@ public class Account {
         return dto;
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>// Domain entity directly exposed to API
+                                <pre><code>// Domain entity directly exposed to API
 public class Account {
     private String id;
     private String accountNumber;
@@ -1295,37 +1359,38 @@ public class Account {
         this.balance = this.balance.add(amount);
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Am I exposing domain entities directly to other layers?</li>
-                                    <li>Do my DTOs include only the necessary data for the specific use case?</li>
-                                    <li>Is there clear mapping between entities and DTOs?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Error Handling Section -->
-                    <section id="error-handling">
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">17</span>
-                                <h3 class="text-2xl font-bold">Error Handling</h3>
-                            </div>
-                            <p>
-                                Use specific exception types and provide meaningful error messages. Handle exceptions at appropriate boundaries.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class AccountService {
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Am I exposing domain entities directly to other layers?</li>
+                                <li>Do my DTOs include only the necessary data for the specific use case?</li>
+                                <li>Is there clear mapping between entities and DTOs?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Error Handling Section -->
+                <section id="error-handling">
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">17</span>
+                            <h3 class="text-2xl font-bold">Error Handling</h3>
+                        </div>
+                        <p>
+                            Use specific exception types and provide meaningful error messages. Handle exceptions at
+                            appropriate boundaries.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class AccountService {
     public Account createAccount(AccountRequest request) {
         try {
             Customer customer = findCustomer(request.getCustomerId());
@@ -1358,13 +1423,13 @@ public class Account {
                 "Unknown account type: " + typeCode));
     }
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class AccountService {
+                                <pre><code>public class AccountService {
     public Account createAccount(AccountRequest request) {
         // Generic exception with unhelpful message
         if (request.getCustomerId() == null) {
@@ -1380,114 +1445,118 @@ public class Account {
         // More error-prone code...
     }
 }</code></pre>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-indigo-50 rounded-lg p-6 mt-4">
-                                <h4 class="font-bold mb-2">Review Questions:</h4>
-                                <ul class="list-disc ml-6">
-                                    <li>Do I use specific exception types for different error scenarios?</li>
-                                    <li>Do my error messages provide helpful information about what went wrong?</li>
-                                    <li>Am I handling exceptions at the appropriate layer?</li>
-                                </ul>
                             </div>
                         </div>
-                    </section>
 
-                    <div class="section-divider"></div>
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Do I use specific exception types for different error scenarios?</li>
+                                <li>Do my error messages provide helpful information about what went wrong?</li>
+                                <li>Am I handling exceptions at the appropriate layer?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-                    <!-- Naming Guidelines Section -->
-                    <section id="naming-guidelines">
-                        <h2 class="text-3xl font-bold gradient-text">Naming Guidelines</h2>
-                        <p class="mb-8">
-                            How we name entities in our code is a reflection of our understanding of the domain.
+                <div class="section-divider"></div>
+
+                <!-- Naming Guidelines Section -->
+
+                <section id="naming-guidelines">
+                    <h2 class="text-3xl font-bold gradient-text">Naming Guidelines</h2>
+                    <p class="mb-8">
+                        How we name entities in our code is a reflection of our understanding of the domain.
+                    </p>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">18</span>
+                            <h3 class="text-2xl font-bold">Naming as Communication</h3>
+                        </div>
+                        <p>
+                            Names should precisely communicate intent and purpose. Clear, descriptive names eliminate
+                            confusion and serve as documentation.
                         </p>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">18</span>
-                                <h3 class="text-2xl font-bold">Naming as Communication</h3>
-                            </div>
-                            <p>
-                                Names should precisely communicate intent and purpose. Clear, descriptive names eliminate confusion and serve as documentation.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class Customer {
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class Customer {
     private final BigDecimal creditLimit;
     private final String accountNumber;
     private final AccountType accountType;
     private final BigDecimal availableBalance;
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class Cust {
+                                <pre><code>public class Cust {
     private final BigDecimal limit;  // Credit limit or withdrawal limit?
     private final String accNum;  // Shortened unnecessarily
     private final int t;  // Completely ambiguous (type? tier? timestamp?)
     private final BigDecimal bal;  // Unclear - balance?
 }</code></pre>
-                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">19</span>
-                                <h3 class="text-2xl font-bold">Prioritize Clarity Over Brevity</h3>
-                            </div>
-                            <p>
-                                Choose longer, descriptive names over short, ambiguous ones, especially for domain-specific concepts. Technical abbreviations are acceptable only if universally understood.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>public class TransactionProcessor {
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">19</span>
+                            <h3 class="text-2xl font-bold">Prioritize Clarity Over Brevity</h3>
+                        </div>
+                        <p>
+                            Choose longer, descriptive names over short, ambiguous ones, especially for domain-specific
+                            concepts. Technical abbreviations are acceptable only if universally understood.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public class TransactionProcessor {
     private final int maximumRetryAttempts = 3;
     private final CustomerVerificationService customerVerificationService;
     private final TransactionAuthorizationStrategy authorizationStrategy;
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>public class TxProc {
+                                <pre><code>public class TxProc {
     private final int maxRetry = 3;
     private final CustVerSvc cvs;
     private final TxAuthStrat strat;
 }</code></pre>
-                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="mb-12">
-                            <div class="flex items-center mb-4">
-                                <span class="guideline-number">20</span>
-                                <h3 class="text-2xl font-bold">Boolean Naming Conventions</h3>
-                            </div>
-                            <p>
-                                Boolean variables and methods should be named to make their meaning clear in conditional statements. Use "is", "has", "can", or "should" prefixes for boolean methods and variables.
-                            </p>
-                            
-                            <div class="example-container mt-6">
-                                <div class="example-good">
-                                    <div class="example-heading">
-                                        <i class="fas fa-check-circle mr-2"></i> Good Example
-                                    </div>
-<pre><code>if (customer.isEligibleForLoan()) {
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">20</span>
+                            <h3 class="text-2xl font-bold">Boolean Naming Conventions</h3>
+                        </div>
+                        <p>
+                            Boolean variables and methods should be named to make their meaning clear in conditional
+                            statements. Use "is", "has", "can", or "should" prefixes for boolean methods and variables.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>if (customer.isEligibleForLoan()) {
     // Process loan
 }
 
@@ -1498,13 +1567,13 @@ if (account.hasOverdraftProtection()) {
 if (transaction.isComplete()) {
     // Send confirmation
 }</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
                                 </div>
-                                
-                                <div class="example-bad">
-                                    <div class="example-heading">
-                                        <i class="fas fa-times-circle mr-2"></i> Bad Example
-                                    </div>
-<pre><code>if (customer.loanEligibility()) {
+                                <pre><code>if (customer.loanEligibility()) {
     // Unclear if this returns a boolean or some eligibility value
 }
 
@@ -1515,60 +1584,341 @@ if (account.overdraftProtection()) {
 if (transaction.status()) {
     // Unclear what status value indicates "complete"
 }</code></pre>
-                                </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <div class="section-divider"></div>
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">21</span>
+                            <h3 class="text-2xl font-bold">Domain-Specific Terminology</h3>
+                        </div>
+                        <p>
+                            For industry-specific abbreviations or terms, provide clear JavaDoc documentation explaining their meaning. Such terms should still be descriptive within their domain context.
+                        </p>
 
-<!-- Summary -->
-<section id="summary">
-    <div class="bg-indigo-50 p-8 rounded-xl mt-16">
-        <h2 class="text-2xl font-bold mb-4 gradient-text">Bringing Philosophy to Practice</h2>
-        <p class="text-lg">
-            These guidelines represent the bridge between philosophical concepts and daily coding practices. By following them, you transform abstract principles into concrete implementations that embody the deeper meaning of philosophical programming.
-        </p>
-        <p class="text-lg mt-4">
-            Remember that philosophy is not separate from practice—it infuses every decision, from naming variables to designing architectures. As you apply these guidelines, you're not just writing better code; you're creating digital entities that faithfully represent reality and embody integrity in their very structure.
-        </p>
-    </div>
-</section>
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>/**
+ * Customer verification status according to Know Your Customer (KYC) regulations.
+ * Represents the level of identity verification completed for this customer.
+ *
+ * Possible values:
+ * 0 - Not verified
+ * 1 - Basic verification (ID submitted)
+ * 2 - Enhanced verification (ID verified)
+ * 3 - Full verification (ID and address verified)
+ */
+private int kycStatus;
 
-<!-- Related Concepts -->
-<section id="related-concepts" class="py-12 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-center mb-10">Related Concepts</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <a href="chapter4.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
-                <div class="flex items-center mb-4">
-                    <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 4:</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Class Impersonation</h3>
-                <p class="text-gray-600">Learn to mentally embody the classes you design to create more intuitive and coherent object models.</p>
-            </a>
-            
-            <a href="chapter5.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
-                <div class="flex items-center mb-4">
-                    <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 5:</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">True Encapsulation and Authority</h3>
-                <p class="text-gray-600">Move beyond getters and setters to implement authority-based access control that mirrors real-world information sharing.</p>
-            </a>
-            
-            <a href="chapter9.html" class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
-                <div class="flex items-center mb-4">
-                    <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 9:</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">The Philosophy of Naming</h3>
-                <p class="text-gray-600">Understand how names shape our perception of reality and learn to choose names that create accurate mental models.</p>
-            </a>
+/**
+ * Indian Financial System Code (IFSC) - unique 11-character code that identifies
+ * the bank branch within the Indian banking system for funds transfer.
+ * Format: First 4 characters represent bank, 5th is 0, and last 6 represent branch.
+ */
+private String ifscCode;</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
+                                </div>
+                                <pre><code>// No explanation of what KYC means or what the values represent
+private int KYC;
+
+// No explanation of what IFSC is or its format requirements
+private String IFSC;</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Have I documented all domain-specific terminology?</li>
+                                <li>Would someone outside my immediate team understand what these terms mean?</li>
+                                <li>Does the documentation explain not just what something is, but why it matters?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">22</span>
+                            <h3 class="text-2xl font-bold">Method Naming Conventions</h3>
+                        </div>
+                        <p>
+                            Method names should begin with a verb that accurately describes the action being performed. The name should clearly communicate the method's purpose and effect.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public Customer findCustomerById(String id);
+public void processPayment(Payment payment);
+public boolean validateAccountNumber(String accountNumber);
+public Account createSavingsAccount(Customer customer);
+public void transferFunds(Account source, Account destination, BigDecimal amount);</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
+                                </div>
+                                <pre><code>public Customer customerById(String id); // Missing verb
+public void payment(Payment payment); // Missing verb
+public boolean accountNumber(String accountNumber); // Purpose unclear
+public Account savingsAccount(Customer customer); // Action unclear
+public void funds(Account source, Account destination, BigDecimal amount); // Action unclear</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does the method name start with a clear action verb?</li>
+                                <li>Does the name accurately describe what the method does?</li>
+                                <li>Is the purpose of the method immediately obvious from its name?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">23</span>
+                            <h3 class="text-2xl font-bold">Effective JavaDoc Documentation</h3>
+                        </div>
+                        <p>
+                            JavaDoc should explain the business logic, purpose, and constraints – not just restate what the code does. Focus on documenting the "why" behind the code rather than the "how."
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>/**
+ * Calculates the maximum loan amount a customer is eligible for based on:
+ * - Credit score (higher scores allow larger loans)
+ * - Income verification (verified income increases eligibility)
+ * - Existing debt obligations (reduces eligibility)
+ * - Bank relationship history (longer relationships increase eligibility)
+ *
+ * This implements the bank's risk assessment policy updated on 2024-01-15,
+ * which complies with Federal Regulation Z requirements.
+ *
+ * @param customer The customer requesting the loan
+ * @param requestedAmount The amount requested by the customer
+ * @return The maximum approved loan amount, which may be less than requested
+ * @throws InsufficientCreditScoreException if credit score is below minimum threshold
+ */
+public BigDecimal calculateLoanEligibility(Customer customer, BigDecimal requestedAmount) {
+    // Implementation
+}</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
+                                </div>
+                                <pre><code>/**
+ * Calculates loan eligibility.
+ *
+ * @param customer The customer
+ * @param requestedAmount The amount requested
+ * @return The approved amount
+ */
+public BigDecimal calculateLoanEligibility(Customer customer, BigDecimal requestedAmount) {
+    // Implementation
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Does my JavaDoc explain why this code exists, not just what it does?</li>
+                                <li>Have I included business context, rules, or policies that informed this implementation?</li>
+                                <li>Would another developer understand the purpose without reading the implementation?</li>
+                                <li>Have I documented edge cases, exceptions, and special handling?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">24</span>
+                            <h3 class="text-2xl font-bold">Enums for Fixed Value Sets</h3>
+                        </div>
+                        <p>
+                            Use enums for representing fixed sets of values. Enums improve type safety, readability, and prevent invalid values from entering the system.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>public enum AccountType {
+    SAVINGS,
+    CHECKING,
+    FIXED_DEPOSIT,
+    LOAN;
+}
+
+public class Account {
+        private AccountType accountType; // Can only be one of the pre-defined types in the enum
+}
+                                </code></pre>
+
+
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
+                                </div>
+                                <pre><code>public class AccountConstants {
+    public static final String TYPE_SAVINGS = "SAVINGS";
+    public static final String TYPE_CHECKING = "CHECKING";
+    public static final String TYPE_FIXED_DEPOSIT = "FIXED_DEPOSIT";
+    public static final String TYPE_LOAN = "LOAN";
+}
+
+public class Account {
+    private String accountType; // Can be any string, not validated
+
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Is this a fixed set of values that should be constrained?</li>
+                                <li>Would an enum provide better type safety than strings or integers?</li>
+                                <li>Could I add useful methods or properties to the enum to encapsulate related behavior?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="flex items-center mb-4">
+                            <span class="guideline-number">25</span>
+                            <h3 class="text-2xl font-bold">Consistent Naming Patterns</h3>
+                        </div>
+                        <p>
+                            Maintain consistent naming patterns throughout the codebase. Use the same terms for the same concepts across all classes and packages.
+                        </p>
+
+                        <div class="example-container mt-6">
+                            <div class="example-good">
+                                <div class="example-heading">
+                                    <i class="fas fa-check-circle mr-2"></i> Good Example
+                                </div>
+                                <pre><code>// Consistent pattern for retrieving objects
+public Customer findCustomerById(String customerId);
+public Account findAccountById(String accountId);
+public Transaction findTransactionById(String transactionId);
+
+// Consistent pattern for validation methods
+public boolean isValidCustomerId(String customerId);
+public boolean isValidAccountNumber(String accountNumber);
+public boolean isValidTransactionReference(String reference);</code></pre>
+                            </div>
+
+                            <div class="example-bad">
+                                <div class="example-heading">
+                                    <i class="fas fa-times-circle mr-2"></i> Bad Example
+                                </div>
+                                <pre><code>// Inconsistent naming patterns
+public Customer getCustomer(String customerId);
+public Account retrieveAccountById(String accountId);
+public Transaction findTransaction(String id);
+
+// Inconsistent validation naming
+public boolean validateCustomerId(String customerId);
+public boolean isAccountNumberCorrect(String accountNumber);
+public boolean checkTransactionReference(String reference);</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-lg p-6 mt-4">
+                            <h4 class="font-bold mb-2">Review Questions:</h4>
+                            <ul class="list-disc ml-6">
+                                <li>Do I use consistent terminology across the codebase?</li>
+                                <li>Have I followed established naming patterns for similar operations?</li>
+                                <li>Would the naming patterns help developers predict method names correctly?</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="section-divider"></div>
+
+                <!-- Summary -->
+                <section id="summary">
+                    <div class="bg-indigo-50 p-8 rounded-xl mt-16">
+                        <h2 class="text-2xl font-bold mb-4 gradient-text">Bringing Philosophy to Practice</h2>
+                        <p class="text-lg">
+                            These guidelines represent the bridge between philosophical concepts and daily coding
+                            practices. By following them, you transform abstract principles into concrete
+                            implementations that embody the deeper meaning of philosophical programming.
+                        </p>
+                        <p class="text-lg mt-4">
+                            Remember that philosophy is not separate from practice—it infuses every decision, from
+                            naming variables to designing architectures. As you apply these guidelines, you're not just
+                            writing better code; you're creating digital entities that faithfully represent reality and
+                            embody integrity in their very structure.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Related Concepts -->
+                <section id="related-concepts" class="py-12 bg-gray-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 class="text-3xl font-bold text-center mb-10">Related Concepts</h2>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <a href="chapter4.html"
+                               class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 4:</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Class Impersonation</h3>
+                                <p class="text-gray-600">Learn to mentally embody the classes you design to create more
+                                    intuitive and coherent object models.</p>
+                            </a>
+
+                            <a href="chapter5.html"
+                               class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 5:</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">True Encapsulation and Authority</h3>
+                                <p class="text-gray-600">Move beyond getters and setters to implement authority-based
+                                    access control that mirrors real-world information sharing.</p>
+                            </a>
+
+                            <a href="chapter9.html"
+                               class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 transition duration-300 transform hover:-translate-y-1">
+                                <div class="flex items-center mb-4">
+                                    <span class="text-indigo-600 text-lg font-semibold mr-2">Chapter 9:</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">The Philosophy of Naming</h3>
+                                <p class="text-gray-600">Understand how names shape our perception of reality and learn
+                                    to choose names that create accurate mental models.</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
-</section>
-</div>
-</div>
-</div>
 </main>
 
 <!-- Footer -->
@@ -1584,20 +1934,29 @@ if (transaction.status()) {
             <div>
                 <h3 class="text-xl font-bold mb-4">Chapter Navigation</h3>
                 <ul class="space-y-2">
-                    <li><a href="#foundational-principles" class="text-gray-300 hover:text-white transition">15.1 Foundational Principles</a></li>
-                    <li><a href="#system-architecture" class="text-gray-300 hover:text-white transition">15.2 System Architecture Guidelines</a></li>
-                    <li><a href="#object-oriented" class="text-gray-300 hover:text-white transition">15.3 Object-Oriented Principles</a></li>
-                    <li><a href="#architectural-flow" class="text-gray-300 hover:text-white transition">15.4 Architectural Flow</a></li>
-                    <li><a href="#code-writing" class="text-gray-300 hover:text-white transition">15.5 Code Writing Guidelines</a></li>
-                    <li><a href="#advanced-principles" class="text-gray-300 hover:text-white transition">15.6 Advanced Principles</a></li>
+                    <li><a href="#foundational-principles" class="text-gray-300 hover:text-white transition">15.1
+                        Foundational Principles</a></li>
+                    <li><a href="#system-architecture" class="text-gray-300 hover:text-white transition">15.2 System
+                        Architecture Guidelines</a></li>
+                    <li><a href="#object-oriented" class="text-gray-300 hover:text-white transition">15.3
+                        Object-Oriented Principles</a></li>
+                    <li><a href="#architectural-flow" class="text-gray-300 hover:text-white transition">15.4
+                        Architectural Flow</a></li>
+                    <li><a href="#code-writing" class="text-gray-300 hover:text-white transition">15.5 Code Writing
+                        Guidelines</a></li>
+                    <li><a href="#advanced-principles" class="text-gray-300 hover:text-white transition">15.6 Advanced
+                        Principles</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-xl font-bold mb-4">Navigate</h3>
                 <ul class="space-y-2">
-                    <li><a href="index.html" class="text-gray-300 hover:text-white transition">Table of Contents</a></li>
-                    <li><a href="chapter14.html" class="text-gray-300 hover:text-white transition">Previous: Testing with Philosophical Focus</a></li>
-                    <li><a href="conclusion.html" class="text-gray-300 hover:text-white transition">Next: Conclusion</a></li>
+                    <li><a href="index.html" class="text-gray-300 hover:text-white transition">Table of Contents</a>
+                    </li>
+                    <li><a href="chapter14.html" class="text-gray-300 hover:text-white transition">Previous: Testing
+                        with Philosophical Focus</a></li>
+                    <li><a href="conclusion.html" class="text-gray-300 hover:text-white transition">Next: Conclusion</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -1609,53 +1968,53 @@ if (transaction.status()) {
 
 <!-- JavaScript for Smooth Scrolling and Table of Contents Highlighting -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
 // Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
 
-const targetId = this.getAttribute('href');
-const targetElement = document.querySelector(targetId);
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
 
-if (targetElement) {
-    window.scrollTo({
-        top: targetElement.offsetTop - 100,
-        behavior: 'smooth'
-    });
-    
-    // Update URL without reload
-    history.pushState(null, null, targetId);
-}
-});
-});
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+
+                    // Update URL without reload
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
 
 // Highlight active section in table of contents
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.table-of-contents a');
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.table-of-contents a');
 
-function highlightNavigation() {
-let scrollPosition = window.scrollY + 120;
+        function highlightNavigation() {
+            let scrollPosition = window.scrollY + 120;
 
-sections.forEach(section => {
-const sectionTop = section.offsetTop;
-const sectionHeight = section.offsetHeight;
-const sectionId = section.getAttribute('id');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
 
-if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + sectionId) {
-            link.classList.add('active');
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
         }
-    });
-}
-});
-}
 
-window.addEventListener('scroll', highlightNavigation);
-highlightNavigation(); // Initial highlighting
-});
+        window.addEventListener('scroll', highlightNavigation);
+        highlightNavigation(); // Initial highlighting
+    });
 </script>
 </body>
 </html>
